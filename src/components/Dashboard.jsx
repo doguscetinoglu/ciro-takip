@@ -4,6 +4,7 @@ import {
   Tooltip, ResponsiveContainer,
 } from 'recharts';
 import { TrendingUp, TrendingDown } from 'lucide-react';
+import PaceCard from './PaceCard';
 
 /* ── count-up hook ── */
 function useCountUp(target, duration = 1100) {
@@ -313,6 +314,9 @@ export default function Dashboard({ entries, goals }) {
             </div>
           </div>
         )}
+
+        {/* pace analysis */}
+        <PaceCard entries={entries} goals={goals} />
 
         {/* chart */}
         {dailyData.length > 0 && (
