@@ -71,7 +71,7 @@ export default function DataEntry({ entries, onRefresh }) {
   });
 
   return (
-    <div style={s.page}>
+    <div className="page page-pad" style={s.page}>
       <div>
         <div style={{ fontSize: 13, color: 'var(--secondary)', fontWeight: 500, marginBottom: 4 }}>Günlük Kayıt</div>
         <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.6px' }}>Veri Gir</div>
@@ -175,6 +175,7 @@ export default function DataEntry({ entries, onRefresh }) {
             <span style={{ fontSize: 13, color: 'var(--secondary)' }}>{monthEntries.length} gün</span>
           </div>
 
+          <div className="table-wrap">
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ background: 'var(--bg)' }}>
@@ -219,6 +220,7 @@ export default function DataEntry({ entries, onRefresh }) {
               </tr>
             </tfoot>
           </table>
+          </div>
         </div>
       )}
     </div>

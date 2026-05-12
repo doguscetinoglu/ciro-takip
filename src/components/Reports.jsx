@@ -90,14 +90,14 @@ export default function Reports({ entries }) {
   });
 
   return (
-    <div style={s.page}>
+    <div className="page page-pad" style={s.page}>
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 12 }}>
+      <div className="stack-mobile" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 12 }}>
         <div>
           <div style={{ fontSize: 13, color: 'var(--secondary)', fontWeight: 500, marginBottom: 4 }}>Detaylı Analiz</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.6px' }}>Raporlar</div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div className="full-mobile" style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
           <select
             value={selected}
             onChange={e => setSelected(e.target.value)}
@@ -116,8 +116,8 @@ export default function Reports({ entries }) {
           >
             {months.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
-          <ExportBtn onClick={() => exportExcel(monthEntries, selected)} label="Excel" color="#34C759" />
-          <ExportBtn onClick={() => exportPDF(monthEntries, selected, totalCiro, totalSales)} label="PDF" color="#FF3B30" />
+          <ExportBtn onClick={() => exportExcel(monthEntries, selected)} label="↓ Excel" color="#34C759" />
+          <ExportBtn onClick={() => exportPDF(monthEntries, selected, totalCiro, totalSales)} label="↓ PDF" color="#FF3B30" />
         </div>
       </div>
 
@@ -176,6 +176,7 @@ export default function Reports({ entries }) {
         <div style={{ padding: '18px 24px', borderBottom: '1px solid var(--separator)' }}>
           <span style={{ fontSize: 15, fontWeight: 600 }}>Gün Detayı</span>
         </div>
+        <div className="table-wrap reports-table">
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
           <thead>
             <tr style={{ background: 'var(--bg)' }}>
@@ -209,6 +210,7 @@ export default function Reports({ entries }) {
             </tr>
           </tfoot>
         </table>
+        </div>
       </div>
     </div>
   );

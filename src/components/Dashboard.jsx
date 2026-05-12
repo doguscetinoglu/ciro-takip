@@ -77,7 +77,7 @@ function StatCard({ meta, value, rawValue, trend, sub, delay }) {
       style={{
         background: meta.grad,
         boxShadow: `0 8px 32px ${meta.glow}, 0 2px 8px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.18)`,
-        padding: '24px 22px',
+        padding: 'clamp(16px,4vw,24px) clamp(14px,3.5vw,22px)',
       }}
     >
       <div className="stat-card-inner-shine" />
@@ -109,7 +109,7 @@ function StatCard({ meta, value, rawValue, trend, sub, delay }) {
 
       {/* value */}
       <div style={{
-        fontSize: meta.id === 'sales' ? 40 : 34,
+        fontSize: 'clamp(24px, 6vw, ' + (meta.id === 'sales' ? '40px' : '34px') + ')',
         fontWeight: 800,
         color: '#fff',
         letterSpacing: '-1.5px',
@@ -228,7 +228,7 @@ export default function Dashboard({ entries, goals }) {
       </div>
 
       {/* content */}
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '36px 24px 48px', position: 'relative', zIndex: 1 }}>
+      <div className="page page-pad" style={{ maxWidth: 1100, margin: '0 auto', padding: '36px 24px 48px', position: 'relative', zIndex: 1 }}>
 
         {/* header */}
         <div className="dash-fade-1" style={{ marginBottom: 28 }}>
@@ -245,7 +245,7 @@ export default function Dashboard({ entries, goals }) {
         </div>
 
         {/* stat cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 20 }}>
           {CARDS_META.map((meta, i) => (
             <StatCard
               key={meta.id}

@@ -42,6 +42,22 @@ input, select, button { font-family: inherit; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--tertiary); border-radius: 3px; }
 
+/* ── Mobile ── */
+@media (max-width: 639px) {
+  .page { padding-bottom: 80px !important; }
+  .page-pad { padding: 20px 16px !important; }
+
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-wrap table { min-width: 420px; }
+
+  .reports-table table { min-width: 560px; }
+  .goals-table table  { min-width: 520px; }
+
+  .hide-mobile { display: none !important; }
+  .stack-mobile { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
+  .full-mobile  { width: 100% !important; }
+}
+
 /* ── Dashboard animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }

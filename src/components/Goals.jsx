@@ -97,7 +97,7 @@ export default function Goals({ goals, entries, onRefresh }) {
   });
 
   return (
-    <div style={s.page}>
+    <div className="page page-pad" style={s.page}>
       <div>
         <div style={{ fontSize: 13, color: 'var(--secondary)', fontWeight: 500, marginBottom: 4 }}>Performans</div>
         <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.6px' }}>Hedefler</div>
@@ -196,6 +196,7 @@ export default function Goals({ goals, entries, onRefresh }) {
           <div style={{ padding: '18px 24px', borderBottom: '1px solid var(--separator)' }}>
             <span style={{ fontSize: 15, fontWeight: 600 }}>Tüm Hedefler</span>
           </div>
+          <div className="table-wrap goals-table">
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ background: 'var(--bg)' }}>
@@ -225,6 +226,7 @@ export default function Goals({ goals, entries, onRefresh }) {
               })}
             </tbody>
           </table>
+          </div>
         </div>
       )}
     </div>
